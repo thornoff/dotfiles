@@ -10,4 +10,4 @@ In your home directory enter the following command:
 
 In your home directory enter following commands:
 
-    * ln -s dotfiles/vimrc .vimrc
+* ln -s dotfiles/vimrc .vimrc
