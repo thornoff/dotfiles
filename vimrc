@@ -10,3 +10,6 @@ set tags=./tags,tags;
 " show invisibles
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
+
+" set nerd-tree like behavior as default when opening explorer mode (:E)
+let g:netrw_liststyle=3
