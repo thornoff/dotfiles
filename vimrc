@@ -4,6 +4,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" line numbers
+set number
+
 " ctag option
 set tags=./tags,tags;
 
