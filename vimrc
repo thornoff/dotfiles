@@ -16,3 +16,6 @@ set listchars=tab:▸\ ,eol:¬
 
 " set nerd-tree like behavior as default when opening explorer mode (:E)
 let g:netrw_liststyle=3
+
+" use hidden buffers more liberally (without showing error messages)
+set hidden
