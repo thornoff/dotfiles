@@ -16,3 +16,12 @@ set listchars=tab:▸\ ,eol:¬
 
 " set nerd-tree like behavior as default when opening explorer mode (:E)
 let g:netrw_liststyle=3
+
+" use hidden buffers more liberally (without showing error messages)
+set hidden
+
+" changing focus of windows
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
