@@ -1,3 +1,6 @@
+" colorscheme
+colorscheme pablo
+
 " tab space
 set smartindent
 set tabstop=4
@@ -25,3 +28,7 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" map saving files
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
