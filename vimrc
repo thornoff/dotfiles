@@ -32,3 +32,6 @@ map <C-l> <C-w>l
 " map saving files
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
+
+" shared system clipboard
+set clipboard=unnamed
