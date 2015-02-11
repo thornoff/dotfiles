@@ -10,3 +10,4 @@ In your home directory enter the following command:
 
 * ln -s ~/dotfiles/vimrc ~/.vimrc
 * ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+* ln -s ~/dotfiles/gitconfig ~/.gitconfig
