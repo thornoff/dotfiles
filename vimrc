@@ -10,6 +10,10 @@ set expandtab
 " line numbers
 set number
 
+" load plugins
+set nocompatible
+filetype plugin on
+
 " ctag option
 set tags=./tags,tags;
 
@@ -19,6 +23,7 @@ set listchars=tab:▸\ ,eol:¬
 
 " set nerd-tree like behavior as default when opening explorer mode (:E)
 let g:netrw_liststyle=3
+let g:netrw_altv=2
 
 " use hidden buffers more liberally (without showing error messages)
 set hidden
@@ -35,3 +40,6 @@ imap <C-s> <esc>:w<CR>
 
 " shared system clipboard
 set clipboard=unnamed
+
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-n> :nohl<CR><C-l>
