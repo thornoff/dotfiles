@@ -1,3 +1,7 @@
+" Vim configuration file
+" Inspired by Drew Neil's book 'Practical Vim - Edit Text at the Speed of
+" Thought' and vimcasts (http://vimcasts.org/)
+
 " colorscheme
 colorscheme pablo
 
@@ -12,6 +16,7 @@ set number
 
 " load plugins
 set nocompatible
+set pastetoggle=<F3>
 filetype plugin on
 
 " ctag option
