@@ -12,3 +12,4 @@ In your home directory enter the following command:
 * ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 * ln -s ~/dotfiles/gitconfig ~/.gitconfig
 * ln -s ~/dotfiles/gdbinit ~/.gdbinit
+* ln -s ~/dotfiles/dircolors ~/.dircolors
