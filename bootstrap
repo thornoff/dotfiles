@@ -1,5 +1,7 @@
 #! /bin/sh
 
+echo "setting dotfile symlinks..."
+
 # build symbolic links to dotfiles #############################################
 if [ ! -e "$HOME/.vimrc" ]
 then

@@ -8,4 +8,4 @@ In your home directory enter the following command:
 
 ## Applying symbolic links to dotfiles
 
-> sudo ~/dotfiles/bootstrap
+> ~/dotfiles/bootstrap
