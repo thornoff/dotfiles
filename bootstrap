@@ -1,39 +1,39 @@
 #! /bin/sh
 
-# build symbolic links to dotfiles #####################################################
-if [ ! -e "~/.vimrc" ]
+# build symbolic links to dotfiles #############################################
+if [ ! -e "$HOME/.vimrc" ]
 then
     ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 else
-    ln -s -f ~/dotfiles/vim/vimrc ~/.vimrc
+    ln -sfn ~/dotfiles/vim/vimrc ~/.vimrc
 fi
 
-if [ ! -e "~/.tmux.conf" ]
+if [ ! -e "$HOME/.tmux.conf" ]
 then
     ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 else
-    ln -s -f ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+    ln -sfn ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 fi
 
-if [ ! -e "~/.gitconfig" ]
+if [ ! -e "$HOME/.gitconfig" ]
 then
     ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
 else
-    ln -s -f ~/dotfiles/git/gitconfig ~/.gitconfig
+    ln -sfn ~/dotfiles/git/gitconfig ~/.gitconfig
 fi
 
-if [ ! -e "~/.gdbinit" ]
+if [ ! -e "$HOME/.gdbinit" ]
 then
     ln -s ~/dotfiles/gdb/gdbinit ~/.gdbinit
 else
-    ln -s -f ~/dotfiles/gdb/gdbinit ~/.gdbinit
+    ln -sfn ~/dotfiles/gdb/gdbinit ~/.gdbinit
 fi
 
-if [ ! -e "~/.dircolors" ]
+if [ ! -e "$HOME/.dircolors" ]
 then
     ln -s ~/dotfiles/terminalcolors/dircolors ~/.dircolors
 else
-    ln -s -f ~/dotfiles/terminalcolors/dircolors ~/.dircolors
+    ln -sfn ~/dotfiles/terminalcolors/dircolors ~/.dircolors
 fi
 
-########################################################################################
+################################################################################
