@@ -14,6 +14,10 @@ set expandtab
 " line numbers
 set number
 
+" set textwidth
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 " load plugins
 set nocompatible
 set pastetoggle=<F3>

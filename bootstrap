@@ -1,0 +1,39 @@
+#! /bin/sh
+
+# build symbolic links to dotfiles #####################################################
+if [ ! -e "~/.vimrc" ]
+then
+    ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+else
+    ln -s -f ~/dotfiles/vim/vimrc ~/.vimrc
+fi
+
+if [ ! -e "~/.tmux.conf" ]
+then
+    ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+else
+    ln -s -f ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+fi
+
+if [ ! -e "~/.gitconfig" ]
+then
+    ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
+else
+    ln -s -f ~/dotfiles/git/gitconfig ~/.gitconfig
+fi
+
+if [ ! -e "~/.gdbinit" ]
+then
+    ln -s ~/dotfiles/gdb/gdbinit ~/.gdbinit
+else
+    ln -s -f ~/dotfiles/gdb/gdbinit ~/.gdbinit
+fi
+
+if [ ! -e "~/.dircolors" ]
+then
+    ln -s ~/dotfiles/terminalcolors/dircolors ~/.dircolors
+else
+    ln -s -f ~/dotfiles/terminalcolors/dircolors ~/.dircolors
+fi
+
+########################################################################################
