@@ -52,3 +52,12 @@ set clipboard=unnamed
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-n> :nohl<CR><C-l>
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
+" Shortcut ,v opens vimrc file in a new tab when in normal mode
+let mapleader = ","
+nmap <leader>v :tabedit $MYVIMRC<CR>
