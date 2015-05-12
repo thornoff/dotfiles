@@ -38,4 +38,11 @@ else
     ln -sfn ~/dotfiles/terminalcolors/dircolors ~/.dircolors
 fi
 
+if [ ! -e "$HOME/.development" ]
+then
+    ln -n ~/dotfiles/tmux/tmux_environments/development ~/.development
+else
+    ln -sfn ~/dotfiles/tmux/tmux_environments/development ~/.development
+fi
+
 ################################################################################
