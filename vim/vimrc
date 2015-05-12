@@ -2,6 +2,9 @@
 " Inspired by Drew Neil's book 'Practical Vim - Edit Text at the Speed of
 " Thought' and vimcasts (http://vimcasts.org/)
 
+" file encoding
+set fileencodings=utf-8
+
 " colorscheme
 colorscheme pablo
 
@@ -16,7 +19,7 @@ set number
 
 " set textwidth
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%120v.\+/
 
 " load plugins
 set nocompatible
