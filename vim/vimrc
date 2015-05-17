@@ -2,6 +2,12 @@
 " Inspired by Drew Neil's book 'Practical Vim - Edit Text at the Speed of
 " Thought' and vimcasts (http://vimcasts.org/)
 
+" spell checking
+setlocal spell spelllang=en_us
+
+" word completion
+set complete+=kspell
+
 " file encoding
 set fileencodings=utf-8
 
