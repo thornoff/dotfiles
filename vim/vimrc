@@ -2,6 +2,13 @@
 " Inspired by Drew Neil's book 'Practical Vim - Edit Text at the Speed of
 " Thought' and vimcasts (http://vimcasts.org/)
 
+filetype plugin indent on
+filetype plugin on
+set shellslash
+set grepprg=grep\ -nH\ $*
+syntax on
+
+
 " file encoding
 set fileencodings=utf-8
 
@@ -90,3 +97,7 @@ let g:tex_flavor='latex'
 let g:Tex_ViewRule_dvi = 'xdvi>/dev/null 2>/dev/null'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
+
+" vim-latex pdf preview for mac
+let g:Tex_ViewRule_ps= 'open -a Preview'
+let g:Tex_ViewRule_pdf= 'open -a Preview'
