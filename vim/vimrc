@@ -8,6 +8,11 @@ set shellslash
 set grepprg=grep\ -nH\ $*
 syntax on
 
+" spell checking
+setlocal spell spelllang=en_us
+
+" word completion
+set complete+=kspell
 
 " file encoding
 set fileencodings=utf-8
