@@ -24,6 +24,13 @@ else
     ln -sfn ~/dotfiles/git/gitconfig ~/.gitconfig
 fi
 
+if [ ! -e "$HOME/.gitmessage" ]
+then
+    ln -s ~/dotfiles/git/gitmessage ~/.gitmessage
+else
+    ln -sfn ~/dotfiles/git/gitmessage ~/.gitmessage
+fi
+
 if [ ! -e "$HOME/.gdbinit" ]
 then
     ln -s ~/dotfiles/gdb/gdbinit ~/.gdbinit
