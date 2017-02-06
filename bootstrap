@@ -52,11 +52,4 @@ else
     ln -sfn ~/dotfiles/tmux/tmux_environments/dev.conf ~/.dev.conf
 fi
 
-if [ ! -e "$HOME/.ghci" ]
-then
-    ln -s ~/dotfiles/haskell/ghci ~/.ghci
-else
-    ln -sfn ~/dotfiles/haskell/ghci ~/.ghci
-fi
-
 ################################################################################
