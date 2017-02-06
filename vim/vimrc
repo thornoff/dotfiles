@@ -52,6 +52,12 @@ let g:netrw_altv=2
 " use hidden buffers more liberally (without showing error messages)
 set hidden
 
+" disable arrow keys in vim mode
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Right> <NOP>
+noremap <Left> <NOP>
+
 " changing focus of windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
