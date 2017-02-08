@@ -1,2 +1,2 @@
---recursive=yes
+--recurse=yes
 --exclude=.git
