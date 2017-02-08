@@ -2,6 +2,13 @@
 " Inspired by Drew Neil's book 'Practical Vim - Edit Text at the Speed of
 " Thought' and vimcasts (http://vimcasts.org/)
 
+" Add Pathogen
+execute pathogen#infect()
+
+" Enable Vim Hard Mode
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
 filetype plugin indent on
 filetype plugin on
 set shellslash
