@@ -1,6 +1,6 @@
 [user]
 	name = Thomas Hornoff
-	email = thomas.hornoff@posteo.pt
+	email = thornoff@criticalsoftware.com
 [core]
 	editor = vim
 [push]
@@ -13,3 +13,8 @@
 	lg = log --graph --branches --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [commit]
     template = ~/.gitmessage
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt = false

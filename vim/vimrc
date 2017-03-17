@@ -16,7 +16,7 @@ set grepprg=grep\ -nH\ $*
 syntax on
 
 " spell checking
-"setlocal spell spelllang=en_us
+setlocal spell spelllang=en_us
 
 " word completion
 set complete+=kspell
@@ -46,7 +46,7 @@ set pastetoggle=<F3>
 filetype plugin on
 
 " ctag option
-set tags=./tags,tags;
+set tags=./tags;
 
 " show invisibles
 nmap <leader>l :set list!<CR>
@@ -119,3 +119,14 @@ let g:Tex_MultipleCompileFormats='pdf, aux'
 " vim-latex pdf preview for mac
 let g:Tex_ViewRule_ps= 'open -a Preview'
 let g:Tex_ViewRule_pdf= 'open -a Preview'
+
+" Powerline setup
+
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2
+
+" Use 256 colours (Use this setting only if your terminal supports 256
+" colours)
+set t_Co=256

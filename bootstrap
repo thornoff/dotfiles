@@ -59,5 +59,11 @@ else
     ln -sfn ~/dotfiles/ctags/ctags ~/.ctags
 fi
 
+if [ ! -e "$HOME/.ctags" ]
+then
+    ln -s ~/dotfiles/latex/latexmkrc ~/.latexmkrc
+else
+    ln -sfn ~/dotfiles/latex/latexmkrc ~/.latexmkrc
+fi
 
 ################################################################################
