@@ -1,0 +1,18 @@
+[user]
+    name = name 
+    email = email
+[core]
+    editor = vim
+[push]
+    default = simple
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    lg = log --graph --branches --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt = false

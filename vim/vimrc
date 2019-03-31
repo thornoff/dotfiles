@@ -1,19 +1,57 @@
-" Vim configuration file
-" Inspired by Drew Neil's book 'Practical Vim - Edit Text at the Speed of
-" Thought' and vimcasts (http://vimcasts.org/)
+" Vim Configuration File
 
-" Add Pathogen
+" Pathogen Plugin Manager
 execute pathogen#infect()
+
+" Add Vundle Plugins ================================================
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'dusans/vim-hardmode'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'itchyny/lightline.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" ===================================================================
 
 " Enable Vim Hard Mode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
-filetype plugin indent on
-filetype plugin on
-set shellslash
-set grepprg=grep\ -nH\ $*
 syntax on
+
+" Colorscheme Nord Settings
+"let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
+"let g:nord_uniform_status_lines = 1
+"let g:nord_comment_brightness = 12
+let g:nord_uniform_diff_background = 1
+let g:nord_cursor_line_number_background = 1
+colorscheme nord
+
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
 
 " spell checking
 setlocal spell spelllang=en_us
@@ -24,9 +62,6 @@ set complete+=kspell
 " file encoding
 set fileencodings=utf-8
 
-" colorscheme
-colorscheme pablo
-
 " tab space
 set smartindent
 set tabstop=4
@@ -34,16 +69,14 @@ set shiftwidth=4
 set expandtab
 
 " line numbers
-set number
+set number relativenumber
+set nu rnu
+set cursorline
+"set cursorcolumn
 
 " set textwidth
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+highlight OverLength ctermbg=DarkMagenta ctermfg=white guibg=#592929
 match OverLength /\%120v.\+/
-
-" load plugins
-set nocompatible
-set pastetoggle=<F3>
-filetype plugin on
 
 " ctag option
 set tags=./tags;
@@ -82,9 +115,9 @@ set clipboard=unnamed
 nnoremap <silent> <C-n> :nohl<CR><C-l>
 
 " Source the vimrc file after saving it
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
+"if has("autocmd")
+  "autocmd bufwritepost .vimrc source $MYVIMRC
+"endif
 
 " Shortcut ,v opens vimrc file in a new tab when in normal mode
 "let mapleader = ","
@@ -122,7 +155,8 @@ let g:Tex_ViewRule_pdf= 'open -a Preview'
 
 " Powerline setup
 
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+"set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+"let g:powerline_pycmd = 'py3'
 
 " Always show statusline
 set laststatus=2
