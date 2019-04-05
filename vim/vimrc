@@ -3,7 +3,7 @@
 " Pathogen Plugin Manager
 execute pathogen#infect()
 
-" Add Vundle Plugins ================================================
+" Vundle Plugins ====================================================
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -30,16 +30,11 @@ filetype plugin indent on    " required
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
 " ===================================================================
-
-" Enable Vim Hard Mode
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 syntax on
 
-" Colorscheme Nord Settings
+" Colorscheme Nord ==================================================
 "let g:nord_italic = 1
 let g:nord_underline = 1
 let g:nord_italic_comments = 1
@@ -49,15 +44,29 @@ let g:nord_uniform_diff_background = 1
 let g:nord_cursor_line_number_background = 1
 colorscheme nord
 
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
+" set lightline color scheme nord
+let g:lightline = { 'colorscheme': 'nord',  }
+" ===================================================================
+
+" Always show status-line
+set laststatus=2
 
 " spell checking
 setlocal spell spelllang=en_us
 
 " word completion
 set complete+=kspell
+
+" ==================== SEARCH =======================================
+" search highlight
+set hlsearch
+
+" incremental search
+set incsearch
+
+" shortcut to mute search highlighting
+nnoremap <silent> <C-n> :<C-u>nohlsearch<CR><C-l>
+" ===================================================================
 
 " file encoding
 set fileencodings=utf-8
@@ -72,18 +81,29 @@ set expandtab
 set number relativenumber
 set nu rnu
 set cursorline
-"set cursorcolumn
 
-" set textwidth
+" disable arrow keys in vim mode
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Right> <NOP>
+noremap <Left> <NOP>
+
+" Enable Vim Hard Mode
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" changing focus of windows
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" set text width
 highlight OverLength ctermbg=DarkMagenta ctermfg=white guibg=#592929
 match OverLength /\%120v.\+/
 
-" ctag option
+" ctags option
 set tags=./tags;
-
-" show invisibles
-nmap <leader>l :set list!<CR>
-set listchars=tab:▸\ ,eol:¬
 
 " set nerd-tree like behavior as default when opening explorer mode (:E)
 let g:netrw_liststyle=3
@@ -92,75 +112,52 @@ let g:netrw_altv=2
 " use hidden buffers more liberally (without showing error messages)
 set hidden
 
-" disable arrow keys in vim mode
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Right> <NOP>
-noremap <Left> <NOP>
-
-" changing focus of windows
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 " map saving files
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 
+" show invisibles
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
+
 " shared system clipboard
 set clipboard=unnamed
 
-" <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-n> :nohl<CR><C-l>
-
-" Source the vimrc file after saving it
-"if has("autocmd")
-  "autocmd bufwritepost .vimrc source $MYVIMRC
-"endif
+" Use 256 colors (Use this setting only if your terminal supports 256 colors)
+set t_Co=256
 
 " Shortcut ,v opens vimrc file in a new tab when in normal mode
 "let mapleader = ","
-nmap <leader>v :tabedit $MYVIMRC<CR>
+"nmap <leader>v :tabedit $MYVIMRC<CR>
 
-" latex configuration
+" Latex Settings ====================================================
+
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
+"filetype plugin on
 
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
-set shellslash
+"set shellslash
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
+"set grepprg=grep\ -nH\ $*
 
 " OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
+"filetype indent on
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults
 " to 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
+"let g:tex_flavor='latex'
 
 "let g:Tex_ViewRule_dvi = 'xdvi'
-let g:Tex_ViewRule_dvi = 'xdvi>/dev/null 2>/dev/null'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_MultipleCompileFormats='pdf, aux'
+"let g:Tex_ViewRule_dvi = 'xdvi>/dev/null 2>/dev/null'
+"let g:Tex_DefaultTargetFormat = 'pdf'
+"let g:Tex_MultipleCompileFormats='pdf, aux'
 
 " vim-latex pdf preview for mac
-let g:Tex_ViewRule_ps= 'open -a Preview'
-let g:Tex_ViewRule_pdf= 'open -a Preview'
-
-" Powerline setup
-
-"set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-"let g:powerline_pycmd = 'py3'
-
-" Always show statusline
-set laststatus=2
-
-" Use 256 colours (Use this setting only if your terminal supports 256
-" colours)
-set t_Co=256
+"let g:Tex_ViewRule_ps= 'open -a Preview'
+"let g:Tex_ViewRule_pdf= 'open -a Preview'
+" ===================================================================
