@@ -2,9 +2,9 @@
 
 ## Getting the dotfiles
 
-In your home directory enter the following command:
+Inside your terminal enter the following command:
 
-> git clone https://github.com/thornoff/dotfiles.git
+> git clone https://github.com/thornoff/dotfiles.git ~/
 
 ## Applying symbolic links to dotfiles
 
