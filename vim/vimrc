@@ -68,6 +68,30 @@ set incsearch
 nnoremap <silent> <C-n> :<C-u>nohlsearch<CR><C-l>
 " ===================================================================
 
+" ==================== FOLDING ======================================
+set foldenable
+set foldlevelstart=1
+set foldnestmax=10
+set foldmethod=syntax
+set foldcolumn=4
+
+" sh folding
+let sh_fold_enabled=1
+
+" zsh folding
+let zsh_fold_enable=1
+" ===================================================================
+"
+" 
+" ==================== Language Specifics ===========================
+"" C
+let c_space_errors=1
+let c_curly_error=1
+
+" python
+let python_highlight_all=1
+" ===================================================================
+"
 " file encoding
 set fileencodings=utf-8
 
