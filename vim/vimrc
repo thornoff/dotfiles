@@ -18,6 +18,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'dusans/vim-hardmode'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'lervag/vimtex'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
